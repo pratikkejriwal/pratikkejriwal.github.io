@@ -1,70 +1,498 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Pratik Kejriwal" />
-    <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    <link rel="stylesheet" href="static/styles.css" />
-    <title>Pratik Kejriwal</title>
+    <title>Pratik Kejriwal - Machine Learning Engineer</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background-color: var(--secondary);
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-content p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            color: var(--secondary);
+        }
+
+        section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .experience-container, .education-container, .skills-container, .projects-container {
+            margin-top: 2rem;
+        }
+
+        .experience-item, .education-item, .project-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px var(--shadow);
+            position: relative;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .experience-item:hover, .education-item:hover, .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .experience-header, .education-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .company, .university {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .position, .degree {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .duration {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .location {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 0.3rem;
+        }
+
+        .responsibilities, .project-description {
+            margin-top: 1rem;
+        }
+
+        .responsibilities ul, .project-description ul {
+            padding-left: 1.5rem;
+        }
+
+        .responsibilities li, .project-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .skill-item {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background-color: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-text {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .header-content p {
+                font-size: 1.2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .experience-header, .education-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-
-    <div class="container">
-        <div class="content text-center">
-            <h1>Pratik Kejriwal</h1>
-            <p><small>
-            <span class="iconify" data-icon="entypo:location-pin" data-inline="true"></span>Bangalore, India
-              </small></p>
-
-            <div class="social-icon">
-                <a href="https://www.linkedin.com/in/pratikkejriwal">
-                    <span class="iconify" data-icon="brandico:linkedin-rect" data-inline="false"></span>
-                      </a> &ensp;
-                <a href="https://github.com/pratikkejriwal">
-                        <span class="iconify" data-icon="logos:github-icon" data-inline="false"></span>
-                          </a> &ensp;
-                <a href="https://www.kaggle.com/pratikkejriwal">
-                    <span class="iconify" data-icon="la:kaggle" data-inline="false"></span>
-                  </a> &ensp;
-
-
-              <!--  <a href="https://drive.google.com/file/d/1FDs9z_-zDd5IGT9-3mY4gjUkKp8fZ3lM/">
-                    <span class="iconify" data-icon="carbon:download" data-inline="false"></span>
-                    </a> &ensp;
-					-->
-
-                <a href="https://www.twitter.com/pratikkejriwal">
-                    <span class="iconify" data-icon="bytesize:twitter" data-inline="false"></span>
-                      </a> &ensp;
-
-                <a href="https://www.reddit.com/u/pratikkejriwal">
-                    <span class="iconify" data-icon="bx:bxl-reddit" data-inline="false"></span>
-                      </a> &ensp;
-                <a href="https://www.medium.com/@pratikkejriwal">
-                    <span class="iconify" data-icon="ant-design:medium-square-filled" data-inline="false"></span>
-                      </a>
-
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Pratik Kejriwal</h1>
+                <p>Machine Learning Engineer</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:kejriwalpratik6292@gmail.com" style="color: white; text-decoration: none;">kejriwalpratik6292@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(+91) 7978879950</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/pratikkejriwal" style="color: white; text-decoration: none;">pratikkejriwal</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bengaluru, India</span>
+                    </div>
+                </div>
             </div>
-            <br>
-            <p>Software Engineer at <a href="https://www.cerner.com/in/en">Cerner</a> since January 2019, where I am working with the Reporting and Analytics team.<br> Purview of my role includes: requirement gathering, root cause analysis, debugging and creating reports for hospitals and healthcare providers across US and UK by understanding their business needs, extracting data from different sources, cleaning those data and analyzing them using descriptive statistical methods.
-			<br>
-			I also develop internal tools which are aimed to reduce the turn-around time and work effort.</p>
-            <br>
-            <p>I graduated from <a href="https://vit.ac.in/">Vellore Institute of Technology, Vellore</a> in 2019, with a Bachelor's Degree specializing in Computer Science and Engineering. </p>
-
         </div>
-    </div>
+    </header>
 
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I am a seasoned Machine Learning Engineer with expertise in recommendation systems, NLP, and data engineering. Currently working at Oracle (OCI) as a Member of Technical Staff focusing on ML/AI solutions. My professional journey spans across leading tech companies including InfoEdge, Jio Platforms, and Oracle Cerner, where I've developed innovative solutions that drive business value through data science and machine learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-container">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="company">Oracle (OCI)</div>
+                            <div class="position">Member of Technical Staff – ML/AI</div>
+                        </div>
+                        <div class="duration">May 2025 – Present</div>
+                    </div>
+                    <div class="location">Bengaluru, India</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="company">InfoEdge (BigShyft)</div>
+                            <div class="position">Machine Learning Engineer</div>
+                        </div>
+                        <div class="duration">October 2022 – May 2025</div>
+                    </div>
+                    <div class="location">Noida, India</div>
+                    <div class="responsibilities">
+                        <ul>
+                            <li>Engineered the core Recommendation Engine using content-based filtering, hybrid ranking, and A/B testing. Managed 100K+ candidates and 5K jobs monthly, achieving a 15% increase in job match success rate.</li>
+                            <li>Developed a Skills to Role model, achieving ~85% accuracy in determining job roles based on skills.</li>
+                            <li>Worked on auto-complete and spelling correction module for standardizing names of skills, locations, companies, and colleges, incorporating support for misspellings, acronyms, and synonym searches.</li>
+                            <li>Automated and optimized the jobseeker lead generation and campaign pipeline that improved targeting precision, reducing audience size from 1M to 0.3M jobseekers while increasing conversion rates from 1% to 7.5%.</li>
+                            <li>Developed a platform leveraging LLMs and vectorDB to extract job posting requirements, match candidates, and craft personalized outreach messages for client acquisition, resulting in a 25% recruiter response rate.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="company">Jio Platforms</div>
+                            <div class="position">Platform Engineer</div>
+                        </div>
+                        <div class="duration">February 2022 – October 2022</div>
+                    </div>
+                    <div class="location">Bengaluru, India</div>
+                    <div class="responsibilities">
+                        <ul>
+                            <li>Led a team of 4 in developing a no-code Data Science & Analytics Platform, empowering business stakeholders to independently query, navigate and derive insights from Jio's Data Lake.</li>
+                            <li>This led to reduced dependencies on data analysts, improved team efficiency, and decreased computation queue utilization by 20%.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="company">Oracle Cerner</div>
+                            <div class="position">Software Engineer</div>
+                        </div>
+                        <div class="duration">January 2019 – February 2022</div>
+                    </div>
+                    <div class="location">Bengaluru, India</div>
+                    <div class="responsibilities">
+                        <ul>
+                            <li>Designed an intelligent query optimization system leveraging graph algorithms to identify frequently used and optimal table joins across 10K+ database tables. Reduced development time by an hour and increased runtime performance from seconds to up to 30 minutes for complex pipelines.</li>
+                            <li>Developed an NLP-based ticket assignment system, automating the routing of service tickets, saving the workload of 2 FTEs and reducing ticket re-routing by 5%.</li>
+                            <li>Developed and optimized data pipelines to enhance overall data handling and improve efficiency for clients.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-container">
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="university">Vellore Institute of Technology, Vellore</div>
+                            <div class="degree">Bachelor of Technology, Computer Science and Engineering</div>
+                        </div>
+                        <div class="duration">2015 – 2019</div>
+                    </div>
+                    <div class="location">CGPA: 8.84</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skills-list">
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">C++</div>
+                    <div class="skill-item">Elasticsearch</div>
+                    <div class="skill-item">FastAPI</div>
+                    <div class="skill-item">scikit-learn</div>
+                    <div class="skill-item">MongoDB</div>
+                    <div class="skill-item">R</div>
+                    <div class="skill-item">Git</div>
+                    <div class="skill-item">LLMs</div>
+                    <div class="skill-item">PyTorch</div>
+                    <div class="skill-item">Docker</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Key Projects</h2>
+            <div class="projects-container">
+                <div class="project-item">
+                    <div class="project-header">
+                        <div class="company">Image Retrieval using Multi-Texton Histogram</div>
+                        <div class="duration">January 2018 – February 2018</div>
+                    </div>
+                    <div class="project-description">
+                        <p>A content-based image retrieval system that analyzes the spatial correlation between neighboring color and edge orientation of the images and retrieves similar images based on such features, with an accuracy of 75%.</p>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <div class="company">Image Generation & Authentication</div>
+                        <div class="duration">March 2018 – May 2018</div>
+                    </div>
+                    <div class="project-description">
+                        <p>Implemented Generative Adversarial Networks (GANs) to train on input images and create such images that do not exist in the dataset but can still be passed as authentic.</p>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <div class="company">Online News Portal</div>
+                        <div class="duration">August 2017 – November 2017</div>
+                    </div>
+                    <div class="project-description">
+                        <p>A dynamic web-based news portal that aggregates news from different agencies and websites using API calls.</p>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <div class="company">Energy-Latency Product Minimization</div>
+                        <div class="duration">January 2017 – April 2017</div>
+                    </div>
+                    <div class="project-description">
+                        <p>Proposed and published an article on "Distribution of Workload on Fog Nodes to optimize Energy-Latency product" in the International Journal of Trend in Research and Development (IJTRD).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/pratikkejriwal" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/pratikkejriwal" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:kejriwalpratik6292@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="footer-text">© 2025 Pratik Kejriwal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation for sections when scrolled into view
+        const sections = document.querySelectorAll('section');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 1s ease forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
-<!--
- <footer class="footer">
-    <a class="copyright">Copyright &copy; 2020 | Pratik Kejriwal</a>
-</footer> 
--->
-
 </html>
