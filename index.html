@@ -409,7 +409,7 @@
             <div class="header-content">
                 <h1>Pratik Kejriwal</h1>
                 <div class="title">Senior Machine Learning Engineer</div>
-                <div class="tagline">Building production AI systems at scale<br>LLMs & RAG • ML System Design • RecSys • Search & Ranking</div>
+                <div class="tagline">Building production AI systems at scale<br>LLMs & Multi-Agent Systems • RAG • ML System Design • RecSys</div>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -432,7 +432,7 @@
         <div class="container">
             <h2 class="section-title">About</h2>
             <div class="about-content">
-                <p><strong>7 years building production ML systems at scale.</strong> Currently architecting RAG-based enterprise solutions at Oracle Cloud Infrastructure. Founding MLE experience at BigShyft (InfoEdge) building recommendation engines and LLM platforms from 0→1, serving 100K+ users.</p>
+                <p><strong>7+ years building production ML systems at scale.</strong> Currently architecting a multi-agent RAG support system at Oracle Cloud Infrastructure, serving 15K+ daily queries for global enterprise customers with dedicated agents per product line and multi-turn conversation support. Founding MLE at BigShyft (InfoEdge), where I built recommendation, matching, and LLM-powered outreach platforms from 0→1 serving 100K+ users.</p>
                 <!-- <p><strong>Specializations:</strong> LLMs & RAG • ML System Design </p> -->
             </div>
         </div>
@@ -456,10 +456,10 @@
                     <div class="location">Bengaluru, India</div>
                     <div class="responsibilities">
                         <ul>
-                            <li>Architected RAG-based support agent for My Oracle Support, serving 10K+ queries daily and reducing ticket escalation by 30%, serving enterprise workloads with hybrid retrieval (keyword + semantic search) on OpenSearch.</li>
-                            <li>Designed comprehensive evaluation framework using RAGAs metrics (response_relevance, answer_correctness, context_precision, context_recall) across 5K+ test queries.</li>
-                            <li>Led embedding model evaluation: systematically benchmarked Cohere v4-embed vs v3-english and v3-multilingual variants for retrieval accuracy and multilingual support.</li>
-                            <li>Benchmarked LLM backends (LLAMA-3.3, GPT-4, GPT-4-mini) for response quality and cost optimization in production deployment.</li>
+                            <li>Built and deployed a multi-agent support system for OCI's global enterprise customers, serving 15K+ daily queries, with dedicated RAG agents and knowledge bases per product line (Cloud, On-Premise) and multi-turn conversation support. Reduced support escalation by 30% through dynamic routing and abstention avoidance.</li>
+                            <li>Owned the end-to-end stack: KB ingestion, autonomous query evaluation, LLM-driven clarification, and a solution reuse layer that learns from successful human-agent resolutions.</li>
+                            <li>Built a continuous evaluation harness centered on RAGAs scoring across 5K+ test queries, gating every model and prompt change before rollout; load-tested end-to-end RAG conversations at 30s p95.</li>
+                            <li>Benchmarked embedding models (Cohere v4 vs v3 variants) and LLM backends (LLAMA-3.3, GPT-4/4-mini) for retrieval quality and cost in production.</li>
                         </ul>
                     </div>
                 </div>
@@ -478,11 +478,13 @@
                     <div class="location">Noida, India</div>
                     <div class="responsibilities">
                         <ul>
-                            <li>Engineered the core Recommendation Engine using content-based filtering, hybrid ranking, and A/B testing. Managed 100K+ candidates and 5K jobs monthly, achieving a 15% increase in job match success rate.</li>
-                            <li>Developed a Skills to Role model, achieving ~85% accuracy in determining job roles based on skills.</li>
-                            <li>Worked on auto-complete and spelling correction module for standardizing names of skills, locations, companies, and colleges, incorporating support for misspellings, acronyms, and synonym searches.</li>
-                            <li>Automated and optimized the jobseeker lead generation and campaign pipeline that improved targeting precision, reducing audience size from 1M to 0.3M jobseekers while increasing conversion rates from 1% to 7.5%.</li>
-                            <li>Developed a platform leveraging LLMs and vectorDB to extract job posting requirements, match candidates, and craft personalized outreach messages for client acquisition, resulting in a 25% recruiter response rate.</li>
+                            <li>Founding Engineer and sole MLE, leading end-to-end ML development across recommendation, matching, and automation systems.</li>
+                            <li>Architected and built the core Recommendation Engine using content-based filtering and hybrid ranking, serving 100K+ candidates and 5K jobs monthly and lifting the job-match success rate by 15%.</li>
+                            <li>Developed a Skills-to-Role model, achieving ~85% accuracy in determining job roles based on skills.</li>
+                            <li>Built an auto-complete and spelling-correction module for standardizing skills, locations, companies, and colleges, with support for misspellings, acronyms, and synonyms.</li>
+                            <li>Automated lead-generation and campaign pipelines, shrinking audiences from 1M to 0.3M while lifting conversion rates from 1% to 7.5%.</li>
+                            <li>Developed a platform leveraging LLMs and vector databases to extract job posting requirements, match candidates, and craft personalized outreach, achieving a 25% recruiter response rate.</li>
+                            <li>Managed a team of 3 data analysts for reporting and analytics, ensuring data-driven product decisions.</li>
                         </ul>
                     </div>
                 </div>
@@ -521,9 +523,8 @@
                     <div class="location">Bengaluru, India</div>
                     <div class="responsibilities">
                         <ul>
-                            <li>Designed an intelligent query optimization system leveraging graph algorithms to identify frequently used and optimal table joins across 10K+ database tables. Reduced development time by an hour and increased runtime performance from seconds to up to 30 minutes for complex pipelines.</li>
-                            <li>Developed an NLP-based ticket assignment system, automating the routing of service tickets, saving the workload of 2 FTEs and reducing ticket re-routing by 5%.</li>
-                            <li>Developed and optimized data pipelines to enhance overall data handling and improve efficiency for clients.</li>
+                            <li>Designed an intelligent query optimization system using graph algorithms to surface frequently used and optimal table joins across 10K+ database tables. Cut development time by ~1 hour per reporting pipeline and reduced runtime by seconds for simple workflows and up to 30 minutes for complex ones.</li>
+                            <li>Developed an NLP-based ticket assignment system, automating the routing of service tickets, freeing ~2 FTEs of effort and reducing ticket re-routing by 5%.</li>
                         </ul>
                     </div>
                 </div>
@@ -561,33 +562,32 @@
                     <div class="skills-list">
                         <div class="skill-item">Python</div>
                         <div class="skill-item">PyTorch</div>
-                        <div class="skill-item">scikit-learn</div>
-                        <div class="skill-item">fastText</div>
                     </div>
                 </div>
 
                 <div class="skills-section-group">
                     <div class="skills-section-title">LLMs & NLP</div>
                     <div class="skills-list">
-                        <div class="skill-item">OpenAI</div>
-                        <div class="skill-item">Claude</div>
-                        <div class="skill-item">Cohere Embeddings</div>
-                        <div class="skill-item">LLAMA</div>
+                        <div class="skill-item">Multi-Agent Systems</div>
+                        <div class="skill-item">RAG</div>
+                        <div class="skill-item">LLMs</div>
+                        <div class="skill-item">Prompt Engineering</div>
+                        <div class="skill-item">Context Engineering</div>
+                        <div class="skill-item">Embeddings</div>
                         <div class="skill-item">RAGAs</div>
-                        <div class="skill-item">spaCy</div>
-                        <div class="skill-item">NLTK</div>
+                        <div class="skill-item">Langfuse</div>
                     </div>
                 </div>
 
                 <div class="skills-section-group">
                     <div class="skills-section-title">Vector Search & Databases</div>
                     <div class="skills-list">
-                        <div class="skill-item">Elasticsearch</div>
-                        <div class="skill-item">ChromaDB</div>
-                        <div class="skill-item">MongoDB</div>
                         <div class="skill-item">SQL</div>
-                        <div class="skill-item">Redis</div>
+                        <div class="skill-item">Elasticsearch</div>
                         <div class="skill-item">OpenSearch</div>
+                        <div class="skill-item">MongoDB</div>
+                        <div class="skill-item">ChromaDB</div>
+                        <div class="skill-item">Oracle 26ai</div>
                     </div>
                 </div>
 
@@ -597,18 +597,16 @@
                         <div class="skill-item">FastAPI</div>
                         <div class="skill-item">Docker</div>
                         <div class="skill-item">Git</div>
-                        <div class="skill-item">Apache Kafka</div>
-                        <div class="skill-item">Apache Airflow</div>
-                        <div class="skill-item">HiveQL</div>
+                        <div class="skill-item">Oracle ADK</div>
+                        <div class="skill-item">OpenTelemetry</div>
                     </div>
                 </div>
 
                 <div class="skills-section-group">
                     <div class="skills-section-title">Cloud</div>
                     <div class="skills-list">
-                        <div class="skill-item">AWS</div>
-                        <div class="skill-item">Oracle Cloud</div>
-                        <div class="skill-item">Azure</div>
+                        <div class="skill-item">Oracle Cloud Infrastructure (OCI)</div>
+                        <div class="skill-item">Amazon Web Servuces (AWS)</div>
                     </div>
                 </div>
 
@@ -616,6 +614,7 @@
                     <div class="skills-section-title">Specialized</div>
                     <div class="skills-list">
                         <div class="skill-item">RAG Systems</div>
+                        <div class="skill-item">Multi-Agent Systems</div>
                         <div class="skill-item">Recommendation Systems</div>
                         <div class="skill-item">Search & Ranking</div>
                         <div class="skill-item">Information Retrieval</div>
@@ -669,7 +668,7 @@
                 <a href="https://github.com/pratikkejriwal" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="mailto:kejriwalpratik6292@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="footer-text">© 2025 Pratik Kejriwal. All rights reserved.</p>
+            <p class="footer-text">© 2026 Pratik Kejriwal. All rights reserved.</p>
         </div>
     </footer>
 
